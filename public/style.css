@@ -1,0 +1,59 @@
+.cls0{
+    background-color: transparent;
+    border-color: rgb(255, 249, 127);
+    width: 50%;
+    padding-left: 25%;
+    padding-right: 25%;
+    padding-top: 10%;
+}
+.cls1{
+    background-color:rgb(156, 100, 100) ;
+    color: bisque;
+   }
+input:hover,#button:hover{
+    background-color:rgb(18, 1, 1);
+    border-color: transparent;
+    color: rgb(255, 30, 0);
+}
+#nom,#prenom{
+    width: 200px;
+    border-color: transparent;
+}
+button{
+    background-color:rgb(125, 1, 1);
+    width: 207px;
+    border-color: transparent;
+    color: bisque;
+    margin: 10px;
+}
+
+hr{
+    border-style: inset;
+    border-width: 3px;
+    border-color: black;
+}
+
+.table{
+    background-color:rgb(163, 205, 195);
+    border-color: rgb(134, 133, 107);
+    border-style:inset;
+    border-width: 0.5em;
+    width: 50%;
+    margin-left: 20%;
+   
+    margin-top: 10%;
+    color:rgb(184, 72, 72);
+}
+th{
+
+    background-color: black;
+    font-style: oblique;
+    color: white;
+}
+tr:hover{
+
+    background-color: rgb(238, 209, 142);
+    color: white;
+}
+
+

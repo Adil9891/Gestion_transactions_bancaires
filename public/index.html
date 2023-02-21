@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bank transactions</title>
+    <link rel="stylesheet" href="/style.css">
+  </head>
+  <body>
+    <div class="cls0">
+
+       <!-- get all transactions-->
+       <form method="get" action="http://localhost:4000/html/all-transactions">
+          <input type="submit" value="get all transactions" formtarget="_blank">
+       </form>
+       <br>
+       <hr>
+       
+       <!-- get one transaction-->
+       <br>
+       <form method="get" action="http://localhost:4000/html/transaction2">       
+          <input type="submit" value="get one transaction by id :">
+          <input type="text" name="id" >
+       </form>
+       <br>
+       <hr>
+       <!-- Add  one transaction-->
+       
+       
+      
+     <form method="post" action="/post">
+      <table class="none">
+        <h2>Formulaire d'ajout</h2>
+          <tr>
+              <td>
+                  Nom du client : 
+                 
+              </td>
+              <td>
+                  <input type="text" name="name">
+              </td>
+              
+          </tr>
+          <tr>
+              <td>
+                  Montant : 
+              </td>
+              <td>
+                  <input type="text" name="amount">
+              </td>
+              
+          </tr>
+          <tr>
+              <td>
+                  Emetteur : 
+                 
+              </td>
+              <td>
+                  <input type="text" name="emetteur">
+              </td>
+              
+          </tr>
+          <tr>
+              <td>
+                  Destinataire : 
+              </td>
+              <td>
+                  <input type="text" name="destinataire"> 
+              </td>
+              
+          </tr>
+          <tr>
+              <td>
+                  Date d'execution : 
+  
+              </td>
+              <td>
+                  <input type="date" name="date_execution">
+              </td>
+              
+          </tr>
+          <tr>
+              <td>
+              </td>
+              <td>
+                  <input type="submit" value="ajouter transaction">
+              </td>
+              
+          </tr>
+      </table>
+     
+     
+      
+    </form>
+
+    </div>  
+  </body></html>

@@ -5,19 +5,10 @@ const view = require('./src/view.js')
 const fs = require('fs')
 const app = express()
 const port = 4000
+
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static('./'));
-
-/* app.get('/', (req, res) => {
-//fs.readFile( __dirname  + '/index.html', { encoding: 'utf8' })
-
-fs.readFile('index.html', function(err, data) {
-    res.writeHead(200, {'Content-Type': 'text/html'});
-    res.write(data);
-    return res.end();
-  });
-}) */
+app.use(express.static('./public'));
 
 app.get('/get-transactions', (req, res) => {
     res.json(transactions.get_transactions())
@@ -28,15 +19,20 @@ app.get('/get-transaction/:id', (req, res) => {
 })
 
 app.get('/html/all-transactions', (req, res) => {
+
    
     res.send(view.displayAllTransactions(transactions.get_transactions()))
     // test
 })
 
 app.get('/html/transaction/:id', (req, res) => {
-   // res.send(transactions.get_transaction(Number(req.params.id)))
     res.send(view.displayTransaction(transactions.get_transaction(Number(req.params.id))))
 })
+
+
+app.get('/html/transaction2', (req, res) => {
+     res.send(view.displayTransaction(transactions.get_transaction(Number(req.query.id))))
+ })
 
 app.post('/new-transaction', (req, res) => {
     
@@ -45,19 +41,18 @@ app.post('/new-transaction', (req, res) => {
    
    })  
 
-app.listen(port, () => {
-    console.log(`serveur de transaction opérationnel au port ${port}`)
-})
 app.get('/add.html', function(req, res) {
-    // exécuté lorsqu'est appelé page.html
     res.sendFile( __dirname  + '/add.html');
   });
 
   app.post('/post', function(req, res) {
-    // exécuté lorsqu'est appelé post.html
-    
 
     transactions.new_transction(req.body.name,req.body.amount,req.body.emetteur,req.body.destinataire,req.body.date_execution)
 
     res.send("<p>transaction ajoutée avec succès</>")
   });
+
+
+  app.listen(port, () => {
+    console.log(`serveur de transaction opérationnel au port ${port}`)
+})
